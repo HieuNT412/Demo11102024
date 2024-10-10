@@ -17,6 +17,8 @@ namespace Demo1110.Controllers
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;
+
+        private readonly ILogger logger1;
         private readonly IMapper _mapper;
 
         public CompaniesController(IRepositoryManager repository, ILoggerManager logger, IMapper mapper)

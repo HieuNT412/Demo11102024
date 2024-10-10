@@ -2,6 +2,7 @@ using Demo1110.IRepository;
 using Demo1110.Model;
 using Demo1110.Repository;
 using Microsoft.EntityFrameworkCore;
+using Demo1110.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,9 @@ builder.Services.AddDbContext<AppDbContext>(
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();
+builder.Services.AddScoped<ILoggerManager, LoggerManager>();
+builder.Services.AddAutoMapper(typeof(MapperProfile));
+
 
 var app = builder.Build();
 
